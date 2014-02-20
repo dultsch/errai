@@ -14,8 +14,10 @@ import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.FlowPanel;
 
 @Templated
+@WithInsertPanel
 public class BindingTemplate extends Composite {
 
   @Bound(property = "id")
@@ -42,7 +44,6 @@ public class BindingTemplate extends Composite {
   @DataField("phone")
   private TextBox phoneNumber;
 
-  @Inject
   @Bound
   @DataField
   private BindingListWidget children;
@@ -52,6 +53,11 @@ public class BindingTemplate extends Composite {
   @Inject
   public BindingTemplate(@AutoBound DataBinder<TestModel> binder) {
     model = binder.getModel();
+    children = getBindingListWidget();
+  }
+
+  protected BindingListWidget getBindingListWidget() {
+    return new BindingListWidget(new FlowPanel());
   }
 
   public DivElement getIdDiv() {

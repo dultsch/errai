@@ -20,6 +20,7 @@ import java.util.List;
 
 import org.jboss.errai.ui.client.widget.ListWidget;
 import org.jboss.errai.ui.test.common.client.TestModel;
+import com.google.gwt.user.client.ui.ComplexPanel;
 
 /**
  * {@link ListWidget} to test the binding of a list of model objects to UI widgets.
@@ -30,7 +31,15 @@ public class BindingListWidget extends ListWidget<TestModel, BindingItemWidget> 
   
   private List<TestModel> items;
   private int itemsRenderedCalled = 0;
-  
+
+  public BindingListWidget(ComplexPanel panel) {
+    super(panel);
+  }
+
+  public BindingListWidget() {
+    super();
+  }
+
   @Override
   protected Class<BindingItemWidget> getItemWidgetType() {
     return BindingItemWidget.class;

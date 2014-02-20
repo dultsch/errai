@@ -9,18 +9,21 @@ import org.jboss.errai.ui.client.widget.UnOrderedList;
 import org.jboss.errai.ui.test.binding.client.res.BindingItemWidget;
 import org.jboss.errai.ui.test.binding.client.res.BindingListWidget;
 import org.jboss.errai.ui.test.binding.client.res.BindingTemplate;
+import org.jboss.errai.ui.test.binding.client.res.WithInsertPanel;
 import org.jboss.errai.ui.test.common.client.TestModel;
 
 import com.google.gwt.user.client.ui.RootPanel;
 
 @EntryPoint
+@WithInsertPanel
 public class BindingTemplateTestApp {
 
   @Inject
   private RootPanel root;
 
   @Inject
-  private BindingTemplate template;
+  @WithInsertPanel
+  protected BindingTemplate template;
    
   @Inject
   @UnOrderedList

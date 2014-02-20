@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.jboss.errai.enterprise.client.cdi.AbstractErraiCDITest;
 import org.jboss.errai.ioc.client.container.IOC;
+import org.jboss.errai.ioc.client.container.IOCBeanDef;
 import org.jboss.errai.ui.test.binding.client.res.BindingDateConverter;
 import org.jboss.errai.ui.test.binding.client.res.BindingTemplate;
 import org.jboss.errai.ui.test.common.client.TestModel;
